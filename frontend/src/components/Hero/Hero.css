@@ -1,0 +1,138 @@
+.hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    background: #FAFBFC;
+    padding:40px 8% 80px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.hero-left {
+    flex: 1.2;
+    max-width: 650px;
+}
+
+.hero-right {
+    flex: 1.1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-right img {
+    width: 110%;
+    max-width: none;
+}
+
+.hero-left h1 {
+    font-size: 4.4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #0F2D5C;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 620px;
+    color: #667085;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 18px 36px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+/* Primary */
+
+.primary-btn {
+    background: #0F2D5C;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #163B73;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15,45,92,.25);
+}
+
+/* Secondary */
+
+.secondary-btn {
+    background: white;
+    border: 2px solid #16B8A6;
+    color: #16B8A6;
+}
+
+.secondary-btn:hover {
+    background: #16B8A6;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(22,184,166,.25);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+    .hero {
+        padding: 4rem 8%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-left,
+    .hero-right {
+        flex: 1;
+    }
+
+    .hero-left h1 {
+        font-size: 3rem;
+        margin: 0 auto 25px;
+    }
+
+    .hero-description {
+        margin: 0 auto 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-right {
+        justify-content: center;
+    }
+
+    .hero-right img {
+        max-width: 500px;
+    }
+}

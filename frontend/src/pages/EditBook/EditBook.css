@@ -1,0 +1,112 @@
+.edit-book-page {
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 40px 8% 70px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    color: #0F2D5C;
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #667085;
+    font-size: 1rem;
+}
+
+.edit-book-form {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(15,45,92,.08);
+}
+
+.edit-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.edit-form-group label {
+    color: #0F2D5C;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.edit-form-group input,
+.edit-form-group textarea,
+.edit-form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #D0D5DD;
+    border-radius: 12px;
+    font-size: .95rem;
+    outline: none;
+    transition: .3s;
+    background: white;
+}
+
+.edit-form-group input:focus,
+.edit-form-group textarea:focus,
+.edit-form-group select:focus {
+    border-color: #16B8A6;
+    box-shadow: 0 0 0 4px rgba(22,184,166,.15);
+}
+
+.edit-form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#0F2D5C;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.submit-btn:hover{
+
+    background:#163B73;
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(15,45,92,.20);
+
+}
+
+.preview-image{
+    width:180px;
+    margin-top:15px;
+    border-radius:12px;
+    object-fit:cover;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+@media (max-width:768px) {
+
+    .edit-book-page {
+        padding: 30px 5% 50px;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .book-form {
+        padding: 25px;
+    }
+
+}

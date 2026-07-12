@@ -1,0 +1,62 @@
+.why-borrowly{
+    padding:50px 8%;
+    background:white;
+}
+
+.why-borrowly h2{
+    text-align:center;
+    font-size:2.8rem;
+    color:#0F2D5C;
+    margin-bottom:12px;
+}
+
+.why-subtitle{
+    text-align:center;
+    color:#667085;
+    font-size:1.1rem;
+    margin-bottom:60px;
+}
+
+.benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.benefit-card{
+    text-align:center;
+    padding:35px 25px;
+    border-radius:18px;
+    background:#FAFBFC;
+    transition:.3s;
+}
+
+.benefit-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(15,45,92,.12);
+}
+
+.benefit-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    background:#E7FAF7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:#16B8A6;
+}
+
+.benefit-card h3{
+    color:#0F2D5C;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.benefit-card p{
+    color:#667085;
+    line-height:1.8;
+}

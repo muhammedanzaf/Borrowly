@@ -1,0 +1,183 @@
+.add-book {
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 120px 8% 70px;
+}
+
+.add-book-container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 20px 50px rgba(15,45,92,.08);
+}
+
+.add-book-container h1 {
+    color: #0F2D5C;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.add-book-container>p {
+    color: #667085;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Floating Input */
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+    padding: 18px 18px 14px;
+    font-size: 1rem;
+    border: 2px solid #D0D5DD;
+    border-radius: 12px;
+    outline: none;
+    background: transparent;
+    transition: .3s;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color: #16B8A6;
+
+}
+
+.form-group label {
+
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    background: white;
+    color: #667085;
+    padding: 0 6px;
+    transition: .3s;
+    pointer-events: none;
+
+}
+
+.form-group input:focus+label,
+.form-group input:valid+label,
+.form-group textarea:focus+label,
+.form-group textarea:valid+label,
+.form-group select:focus+label,
+.form-group select:valid+label {
+
+    top: -10px;
+    font-size: .82rem;
+    color: #16B8A6;
+
+}
+
+/* Upload */
+
+.upload-area {
+
+    border: 2px dashed #16B8A6;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    background: #F8FFFE;
+
+}
+
+.upload-area label {
+
+    display: block;
+    color: #0F2D5C;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+.upload-area input {
+
+    width: 100%;
+
+}
+
+.preview-image {
+
+    margin-top: 25px;
+    width: 220px;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0,0,0,.12);
+
+}
+
+/* Button */
+
+.upload-btn {
+
+    background: #0F2D5C;
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 600;
+
+}
+
+.upload-btn:hover {
+
+    background: #163B73;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(15,45,92,.2);
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.add-book{
+
+padding:100px 5% 50px;
+
+}
+
+.add-book-container{
+
+padding:30px 22px;
+
+}
+
+.add-book-container h1{
+
+font-size:2rem;
+
+}
+
+.preview-image{
+
+width:180px;
+
+}
+
+}

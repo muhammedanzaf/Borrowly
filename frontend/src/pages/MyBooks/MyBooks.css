@@ -1,0 +1,158 @@
+.my-books {
+    min-height: 100vh;
+    background: #F8FAFC;
+    padding: 40px 8% 70px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    font-size: 2.7rem;
+    color: #0F2D5C;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #667085;
+}
+
+.my-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    align-items: stretch;
+}
+
+.my-book-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 45, 92, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    transition: all 0.3s ease;
+}
+
+.my-book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(15, 45, 92, 0.15);
+}
+
+.my-book-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.my-book-card:hover img {
+    transform: scale(1.05);
+}
+
+.book-details {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.book-details h3 {
+    color: #0F2D5C;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 15px 0 8px;
+
+    /* Reserve space for up to two lines */
+    min-height: 72px;
+}
+
+.book-details p {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: .82rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.status.available {
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.status.borrowed {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.status.requested {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.actions {
+    display: flex;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.edit-btn,
+.delete-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 13px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.edit-btn {
+    background: #0F2D5C;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #163B73;
+}
+
+.delete-btn {
+    border: none;
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.delete-btn:hover {
+    background: #FCA5A5;
+}
+
+@media (max-width:768px) {
+
+    .my-books {
+        padding: 100px 5% 50px;
+    }
+
+    .my-books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .my-book-card img {
+        height: 280px;
+    }
+
+}
