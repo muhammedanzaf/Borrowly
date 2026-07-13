@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
 
-    baseURL: "https://borrowly-frontend.onrender.com/api"
+    baseURL: "https://borrowly-backend-byxj.onrender.com/api"
 
 });
 
