@@ -67,7 +67,7 @@ function MyBorrowedBooks() {
             >
 
               <img
-                src={`http://localhost:8000/${item.book.image}`}
+                src={`https://borrowly-backend-byxj.onrender.com/${item.book.image}`}
                 alt={item.book.title}
               />
 

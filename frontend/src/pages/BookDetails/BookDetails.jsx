@@ -92,7 +92,7 @@ function BookDetails() {
         <div className="details-image">
 
           <img
-            src={`http://localhost:8000/${book.image.replace(/\\/g, "/")}`}
+            src={`https://borrowly-backend-byxj.onrender.com/${book.image.replace(/\\/g, "/")}`}
             alt={book.title}
           />
 

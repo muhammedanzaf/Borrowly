@@ -41,7 +41,7 @@ function MyBorrowRequests() {
           {validRequests.map((request) => (
             <div className="request-card" key={request._id}>
               <img
-                src={`http://localhost:8000/${request.book.image}`}
+                src={`https://borrowly-backend-byxj.onrender.com/${request.book.image}`}
                 alt={request.book.title}
               />
 

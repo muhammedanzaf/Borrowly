@@ -38,7 +38,7 @@ function EditBook() {
             setGenre(book.genre);
             setDescription(book.description);
 
-            setPreview(`http://localhost:8000/${book.image}`);
+            setPreview(`https://borrowly-backend-byxj.onrender.com/${book.image}`);
 
             setLoading(false);
 

@@ -36,7 +36,7 @@ function BookCard({ book, fetchBooks }) {
       <div className="book-image">
 
         <img
-          src={`http://localhost:8000/${book.image}`}
+          src={`https://borrowly-backend-byxj.onrender.com/${book.image}`}
           alt={book.title}
         />
 
