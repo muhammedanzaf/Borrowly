@@ -121,6 +121,40 @@
     background: #119887;
 }
 
+.borrowed-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.borrowed-buttons .details-btn,
+.borrowed-buttons .return-btn{
+    flex:1;
+}
+
+.return-btn{
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    background:#16B8A6;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.return-btn:hover{
+    background:#129686;
+}
+
+@media(max-width:768px){
+
+.borrowed-buttons{
+    flex-direction:column;
+}
+
+}
+
 @media(max-width:768px){
 
 .borrowed-page{
