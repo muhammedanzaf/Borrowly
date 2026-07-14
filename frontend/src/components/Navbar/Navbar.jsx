@@ -1,87 +1,74 @@
 import "./Navbar.css";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/borrowly-logo.png";
 function Navbar() {
 
     const navigate = useNavigate();
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const token = localStorage.getItem("token");
 
     const handleLogout = () => {
-
-        localStorage.removeItem("token");
-
-        navigate("/");
-
+    localStorage.removeItem("token");
+    setMenuOpen(false);
+    navigate("/");
     };
 
     return (
 
         <nav className="navbar">
 
-            <div className="nav-left">
+    <Link to="/" className="logo">
+        <img src={logo} alt="Borrowly" />
+    </Link>
 
-                <Link to="/" className="logo">
+    <button
+        className="menu-btn"
+        onClick={() => setMenuOpen(!menuOpen)}
+    >
+        ☰
+    </button>
 
-                    <img 
-                        src={logo} 
-                        alt="Borrowly" 
-                    />
+    <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
-                </Link>
+        <div className="nav-center">
 
-                <div className="nav-center">
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
 
-                    <Link to="/">Home</Link>
+            <Link to="/books" onClick={() => setMenuOpen(false)}>Books</Link>
 
-                    <Link to="/books">Books</Link>
+        </div>
 
-                </div>
+        <div className="nav-right">
 
-            </div>
+            {!token ? (
+                <>
+                    <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
 
-            <div className="nav-right">
+                    <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
+                </>
+            ) : (
+                <>
+                    <Link to="/dashboard" onClick={() => setMenuOpen(false)}>
+                        Dashboard
+                    </Link>
 
-                {!token ? (
+                    <button
+                        className="logout-btn"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
+                </>
+            )}
 
-                    <>
+        </div>
 
-                        <Link to="/login">
-                            Login
-                        </Link>
+    </div>
 
-                        <span className="separator">|</span>
-
-                        <Link to="/register">
-                            Register
-                        </Link>
-
-                    </>
-
-                ) : (
-
-                    <>
-
-                        <Link to="/dashboard">
-                            Dashboard
-                        </Link>
-
-                        <span className="separator">|</span>
-
-                        <button
-                            className="logout-btn"
-                            onClick={handleLogout}
-                        >
-                            Logout
-                        </button>
-
-                    </>
-
-                )}
-
-            </div>
-
-        </nav>
+</nav>
 
     );
 
