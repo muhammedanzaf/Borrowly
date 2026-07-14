@@ -2,8 +2,8 @@ import "./Navbar.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/borrowly-logo.png";
-function Navbar() {
 
+function Navbar() {
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -11,67 +11,85 @@ function Navbar() {
     const token = localStorage.getItem("token");
 
     const handleLogout = () => {
-    localStorage.removeItem("token");
-    setMenuOpen(false);
-    navigate("/");
+        localStorage.removeItem("token");
+        setMenuOpen(false);
+        navigate("/");
     };
 
     return (
-
         <nav className="navbar">
 
-    <Link to="/" className="logo">
-        <img src={logo} alt="Borrowly" />
-    </Link>
+            <div className="nav-left">
 
-    <button
-        className="menu-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-    >
-        ☰
-    </button>
+                <Link to="/" className="logo">
+                    <img src={logo} alt="Borrowly" />
+                </Link>
 
-    <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+                <button
+                    className="menu-btn"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    ☰
+                </button>
 
-        <div className="nav-center">
+                <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
-            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+                    <div className="nav-center">
 
-            <Link to="/books" onClick={() => setMenuOpen(false)}>Books</Link>
+                        <Link to="/" onClick={() => setMenuOpen(false)}>
+                            Home
+                        </Link>
 
-        </div>
+                        <Link to="/books" onClick={() => setMenuOpen(false)}>
+                            Books
+                        </Link>
 
-        <div className="nav-right">
+                        {token && (
+                            <Link
+                                to="/dashboard"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Dashboard
+                            </Link>
+                        )}
 
-            {!token ? (
-                <>
-                    <Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link>
+                    </div>
 
-                    <Link to="/register" onClick={() => setMenuOpen(false)}>Register</Link>
-                </>
-            ) : (
-                <>
-                    <Link to="/dashboard" onClick={() => setMenuOpen(false)}>
-                        Dashboard
-                    </Link>
+                    <div className="nav-right">
 
-                    <button
-                        className="logout-btn"
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </button>
-                </>
-            )}
+                        {!token ? (
+                            <>
+                                <Link
+                                    to="/login"
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    Login
+                                </Link>
 
-        </div>
+                                <Link
+                                    to="/register"
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    Register
+                                </Link>
+                            </>
+                        ) : (
+                            <button
+                                className="logout-btn"
+                                onClick={handleLogout}
+                            >
+                                Logout
+                            </button>
+                        )}
 
-    </div>
+                    </div>
 
-</nav>
+                </div>
 
+            </div>
+
+        </nav>
     );
-
 }
 
 export default Navbar;
