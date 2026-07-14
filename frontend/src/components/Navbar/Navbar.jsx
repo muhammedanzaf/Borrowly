@@ -10,9 +10,13 @@ function Navbar() {
 
     const token = localStorage.getItem("token");
 
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     const handleLogout = () => {
         localStorage.removeItem("token");
-        setMenuOpen(false);
+        closeMenu();
         navigate("/");
     };
 
@@ -21,68 +25,68 @@ function Navbar() {
 
             <div className="nav-left">
 
-                <Link to="/" className="logo">
+                <Link to="/" className="logo" onClick={closeMenu}>
                     <img src={logo} alt="Borrowly" />
                 </Link>
 
-                <button
-                    className="menu-btn"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    ☰
-                </button>
+            </div>
 
-                <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+            <button
+                className="menu-btn"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                {menuOpen ? "✕" : "☰"}
+            </button>
 
-                    <div className="nav-center">
+            <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
-                        <Link to="/" onClick={() => setMenuOpen(false)}>
-                            Home
+                <div className="nav-center">
+
+                    <Link to="/" onClick={closeMenu}>
+                        Home
+                    </Link>
+
+                    <Link to="/books" onClick={closeMenu}>
+                        Books
+                    </Link>
+
+                    {token && (
+                        <Link
+                            to="/dashboard"
+                            onClick={closeMenu}
+                        >
+                            Dashboard
                         </Link>
+                    )}
 
-                        <Link to="/books" onClick={() => setMenuOpen(false)}>
-                            Books
-                        </Link>
+                </div>
 
-                        {token && (
+                <div className="nav-right">
+
+                    {!token ? (
+                        <>
                             <Link
-                                to="/dashboard"
-                                onClick={() => setMenuOpen(false)}
+                                to="/login"
+                                onClick={closeMenu}
                             >
-                                Dashboard
+                                Login
                             </Link>
-                        )}
 
-                    </div>
-
-                    <div className="nav-right">
-
-                        {!token ? (
-                            <>
-                                <Link
-                                    to="/login"
-                                    onClick={() => setMenuOpen(false)}
-                                >
-                                    Login
-                                </Link>
-
-                                <Link
-                                    to="/register"
-                                    onClick={() => setMenuOpen(false)}
-                                >
-                                    Register
-                                </Link>
-                            </>
-                        ) : (
-                            <button
-                                className="logout-btn"
-                                onClick={handleLogout}
+                            <Link
+                                to="/register"
+                                onClick={closeMenu}
                             >
-                                Logout
-                            </button>
-                        )}
-
-                    </div>
+                                Register
+                            </Link>
+                        </>
+                    ) : (
+                        <button
+                            className="logout-btn"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    )}
 
                 </div>
 
