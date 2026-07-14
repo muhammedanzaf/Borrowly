@@ -77,16 +77,14 @@
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.3;
-    margin-bottom: 8px;
-
-    /* Keeps every card the same height */
-    min-height: 70px;
+    margin-bottom: 4px;
+    min-height: 48px;
 }
 
 .book-info p {
     color: #667085;
     font-size: 0.95rem;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .book-info button {
