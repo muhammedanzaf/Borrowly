@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { FaBook, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import logo from "../../assets/logo.png"; // Change path if needed
 
 function Footer() {
   return (
@@ -8,17 +9,18 @@ function Footer() {
 
       <div className="footer-container">
 
-        {/* Left */}
+        {/* About */}
 
         <div className="footer-about">
 
-          <div className="footer-logo">
-            <FaBook />
-            <h2>Borrowly</h2>
-          </div>
+          <img
+            src={logo}
+            alt="Borrowly"
+            className="footer-logo"
+          />
 
           <p>
-            Where books meet their next reader.
+            Where books find their next reader.
             Borrow, share and build a community of readers.
           </p>
 
@@ -33,7 +35,6 @@ function Footer() {
           <Link to="/">Home</Link>
           <Link to="/books">Browse Books</Link>
           <Link to="/add-book">Share a Book</Link>
-          <Link to="/about">About Us</Link>
 
         </div>
 

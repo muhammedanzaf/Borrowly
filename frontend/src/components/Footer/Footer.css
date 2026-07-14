@@ -11,10 +11,10 @@
 }
 
 .footer-logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
+    width:170px;
+    height:auto;
     margin-bottom:20px;
+    display:block;
 }
 
 .footer-logo svg{
@@ -101,7 +101,9 @@ text-align:center;
 }
 
 .footer-logo{
-justify-content:center;
+display:block;
+margin:0 auto 20px;
+width:150px;
 }
 
 .footer-about p{
