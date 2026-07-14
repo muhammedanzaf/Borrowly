@@ -90,7 +90,7 @@
 .nav-links{
     display:flex;
     align-items:center;
-    gap:3rem;
+    gap:1rem;
 }
 
 @media (max-width:768px){
