@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import logo from "../../assets/logo.png"; // Change path if needed
+import logo from "../../assets/borrowly-logo.png"; // Change path if needed
 
 function Footer() {
   return (
